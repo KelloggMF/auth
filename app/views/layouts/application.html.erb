@@ -11,11 +11,16 @@
 
   <body>
     <p>
+    <% if @current_user != nil %>
+    Hey, <%= @current_user["first_name"] %>
+    |
+    <a href = "/logout">Logout</a>
+      <% else %>
       <a href="/sessions/new">Log-in</a>
       |
       <a href="/users/new">Sign Up</a>
     </p>
-
+  <% end %>
     <p>
       <%= flash["notice"] %>
     </p>
